@@ -13,7 +13,7 @@ if __name__ == "__main__":
         user=consts.POSTGRES_USER,
         password=consts.POSTGRES_PASSWORD
     )
-    print("-----CONNECTED-----")
+    print("-----CONNECTED TO DATABASE-----")
 
     with conn, conn.cursor() as cursor:
         create_borrowers_table_query=sql.SQL(
@@ -99,4 +99,4 @@ if __name__ == "__main__":
         cursor.execute(create_borrows_table_query)
     
     conn.close()
-    print("-----TABLE CREATED-----")
+    print("-----TABLES WAS CREATED-----")
