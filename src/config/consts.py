@@ -1,6 +1,6 @@
 import os
 
-test = 'It is just a test'
+
 # Table constants 
 BORROWERS_TABLE=os.getenv("BORROWERS_TABLE", "borrowers")
 AUTHORS_TABLE=os.getenv("AUTHORS_TABLE", "authors")
