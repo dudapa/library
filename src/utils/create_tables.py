@@ -1,8 +1,9 @@
 import psycopg2
-from psycopg2 import sql
 import sys
-sys.path.insert(0, 'C:\\Users\\duzda\\Desktop\\library\\src\\config')
-import consts
+
+sys.path.append("..")
+from config import consts
+from psycopg2 import sql
 
 
 if __name__ == "__main__":
@@ -22,9 +23,9 @@ if __name__ == "__main__":
 
             CREATE TABLE borrowers (
                 borrower_id serial PRIMARY KEY,
-                name VARCHAR(128) NOT NULL,
+                firstname VARCHAR(128) NOT NULL,
                 surname VARCHAR(128) NOT NULL,
-                birtdate DATE NOT NULL,
+                birthdate DATE NOT NULL,
                 gender VARCHAR(16) NOT NULL
             );
             """
@@ -38,8 +39,8 @@ if __name__ == "__main__":
 
             CREATE TABLE authors (
                 author_id serial PRIMARY KEY,
-                name VARCHAR(128) NOT NULL,
-                surname VARCHAR(128) NOT NULL,
+                author_name VARCHAR(128) NOT NULL,
+                author_surname VARCHAR(128) NOT NULL,
                 birthdate DATE NOT NULL,
                 nationality VARCHAR(128) NOT NULL
             );
@@ -54,7 +55,7 @@ if __name__ == "__main__":
 
             CREATE TABLE genres (
                 genre_id serial PRIMARY KEY,
-                name VARCHAR(128) NOT NULL
+	            genre_name VARCHAR(128) NOT NULL
             );
             """
         )
@@ -67,7 +68,7 @@ if __name__ == "__main__":
 
             CREATE TABLE books (
                 book_id serial PRIMARY KEY,
-                name VARCHAR(128) NOT NULL,
+                book_name VARCHAR(128) NOT NULL,
                 page_count INT NOT NULL,
                 author_id INT NOT NULL,
                 genre_id INT NOT NULL,
@@ -85,11 +86,11 @@ if __name__ == "__main__":
             DROP TABLE IF EXISTS borrows CASCADE;
 
             CREATE TABLE borrows (
-                borrow_id serial PRIMARY KEY,
                 borrower_id INT NOT NULL,
                 book_id INT NOT NULL,
                 borrow_date DATE NOT NULL,
                 return_date DATE,
+                CONSTRAINT pk_borrower_book PRIMARY KEY (borrower_id, book_id),
                 CONSTRAINT fk_borrower FOREIGN KEY (borrower_id) REFERENCES borrowers(borrower_id) ON DELETE CASCADE ON UPDATE NO ACTION,
                 CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE ON UPDATE NO ACTION
             );
