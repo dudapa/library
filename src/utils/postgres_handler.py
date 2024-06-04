@@ -46,6 +46,7 @@ class PostgresHandler:
             except Exception as e:
                traceback.print_exc()
                print(f"Error during inserted_data {e}")
+               self.connection.rollback()
             
         self.connection.close()
         return inserted_data
@@ -138,6 +139,7 @@ class PostgresHandler:
                 print("This book already this borrower read!")
                 traceback.print_exc()
                 print(f"Error during transaction {e}")
+                self.connection.rollback()
             
         self.connection.close()
         return True
@@ -172,6 +174,7 @@ class PostgresHandler:
             except Exception as e:
                 traceback.print_exc()
                 print(f"Error during transaction {e}")
+                self.connection.rollback()
             
         self.connection.close()
         return True
