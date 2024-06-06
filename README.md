@@ -43,3 +43,18 @@ cd library-backend
    ```
    python create_talbes.py
    ```
+3. ** Populate Tables **
+   
+   Run the insert_data.py script to populate the tables with initial data::
+   
+   ```
+   python insert_data.py
+   ```
+
+### Running the Program
+   
+   Once the database is set up and populated, you can start the program by running the main.py script:
+   
+   ```
+   python main.py
+   ```
