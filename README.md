@@ -40,6 +40,6 @@ cd library-backend
    
    Run the create_tables.py script to create the necessary tables in the database:
    
-  ```python
-  python create_talbes.py
-  ```
+   ```
+   python create_talbes.py
+   ```
