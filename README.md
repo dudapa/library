@@ -2,10 +2,6 @@
 
 This project is a simple backend for a library system, written in Python. It leverages the `psycopg2` module to communicate with a PostgreSQL database and is designed using Object-Oriented Programming (OOP) principles.
 
-## Project Structure
-
-- **postgres_handler.py**: This module defines the `PostgresHandler` class, which handles database operations such as connecting to the database, fetching data, inserting data, managing transactions, and other related tasks.
-
 ## Features
 
 - **Database Connection**: Establishes a connection to a PostgreSQL database using `psycopg2`.
