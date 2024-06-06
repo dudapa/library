@@ -58,3 +58,12 @@ cd library-backend
    ```
    python main.py
    ```
+
+## License
+
+This project is licensed under the MIT License.
+
+
+## Contact
+
+- Email: patrikduda001@gmail.com
