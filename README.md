@@ -26,3 +26,19 @@ To clone this project, run the following command:
 git clone https://github.com/dudapa/library.git
 cd library-backend
 ````
+
+### Setup the Database
+
+1. **Create the Database**:
+   
+   Ensure you have PostgreSQL installed and running. Create a new database for the project:
+
+   ```sql
+   CREATE DATABASE your_db;
+   ```
+2. ** Create Tables **
+   Run the create_tables.py script to create the necessary tables in the database:
+   
+  ```
+  python create_talbes.py
+  ```
