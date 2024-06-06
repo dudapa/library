@@ -37,8 +37,9 @@ cd library-backend
    CREATE DATABASE your_db;
    ```
 2. ** Create Tables **
+   
    Run the create_tables.py script to create the necessary tables in the database:
    
-  ```
+  ```python
   python create_talbes.py
   ```
